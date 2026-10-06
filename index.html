@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Persönliche Startseite und beruflicher Werdegang von Elias J.">
+  <title>Elias J. — persönliche Startseite</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f4ef;
+      --surface: #fffefa;
+      --ink: #202923;
+      --muted: #536258;
+      --line: #d9ded7;
+      --accent: #245b48;
+      --accent-soft: #e3ece5;
+      --radius: 1.15rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid #b35c28; outline-offset: 4px; }
+
+    .page {
+      width: min(100% - 2rem, 68rem);
+      margin-inline: auto;
+    }
+
+    header {
+      padding-block: clamp(3.5rem, 10vw, 7rem) 3rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+    }
+
+    .eyebrow {
+      margin: 0 0 .75rem;
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 14ch;
+      margin-bottom: 1rem;
+      font-size: clamp(2.7rem, 8vw, 5.4rem);
+      letter-spacing: -.065em;
+      line-height: 1.02;
+    }
+
+    .about-intro {
+      max-width: 43rem;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .about-intro h2 {
+      margin-bottom: .75rem;
+      color: var(--ink);
+    }
+
+    .about-intro p { margin-bottom: .75rem; }
+
+    main { padding-block: 3rem 5rem; }
+    section + section { margin-top: 4.5rem; }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -.035em;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    table {
+      width: 100%;
+      min-width: 38rem;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td { padding: .9rem 1rem; }
+    th {
+      background: var(--accent-soft);
+      color: #203d30;
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    td { border-top: 1px solid var(--line); }
+    tbody tr:first-child td { border-top: 0; }
+    td:first-child { font-variant-numeric: tabular-nums; font-weight: 700; }
+    td:last-child { color: var(--muted); }
+
+    figure { margin: 0; }
+    .portrait {
+      overflow: hidden;
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      background: var(--accent-soft);
+    }
+
+    .portrait svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    figcaption {
+      margin-top: .65rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      display: block;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: inherit;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgb(32 41 35 / 9%);
+    }
+
+    .card-art {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1.55;
+    }
+
+    .card-copy { padding: 1rem 1.1rem 1.2rem; }
+    h3 { margin-bottom: .35rem; font-size: 1.05rem; }
+    .card-copy p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
+    .card-link { display: inline-block; margin-top: .75rem; font-size: .85rem; font-weight: 700; }
+    .card-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
+    .card:focus-within { outline: 3px solid #b35c28; outline-offset: 3px; }
+
+    footer {
+      padding-block: 1.5rem 2.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: minmax(0, 1fr) minmax(8rem, 12rem); gap: 1.25rem; }
+      .gallery { grid-template-columns: 1fr; }
+      .card { display: grid; grid-template-columns: minmax(7rem, .8fr) 1.2fr; }
+      .card-art { height: 100%; min-height: 10rem; aspect-ratio: auto; }
+      .card-copy { align-self: center; padding: 1rem; }
+    }
+
+    @media (max-width: 460px) {
+      .hero { grid-template-columns: 1fr; }
+      .portrait { width: min(100%, 13rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Persönliche Seite · Geoinformatik</p>
+          <h1>Elias J.</h1>
+          <section class="about-intro" aria-labelledby="ueber-mich">
+            <h2 id="ueber-mich">Über mich</h2>
+            <p>Fußball ist meine große Leidenschaft: Ich schaue Spiele besonders gern live im Stadion, wo die Atmosphäre und das gemeinsame Mitfiebern für mich dazugehören. Auch für Sport allgemein interessiere ich mich.</p>
+            <p>Außerdem beschäftigen mich Vermessung und Geodäsie. Ich finde spannend, wie aus Messungen Karten und Geodaten entstehen und wie räumliche Informationen helfen, unsere Umgebung besser zu verstehen.</p>
+          </section>
+        </div>
+        <figure>
+          <div class="portrait">
+            <svg viewBox="0 0 400 400" role="img" aria-labelledby="portrait-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="portrait-title">Grafischer Platzhalter mit menschlicher Silhouette</title>
+              <rect width="400" height="400" rx="28" fill="#e3ece5"/>
+              <circle cx="200" cy="151" r="72" fill="#789b88"/>
+              <path d="M63 400c8-93 62-145 137-145s129 52 137 145" fill="#789b88"/>
+              <path d="M151 255c12 26 29 40 49 40s37-14 49-40" fill="#678574"/>
+              <circle cx="317" cy="82" r="24" fill="#c3d7c8"/>
+              <path d="M315 70v24m-12-12h24" stroke="#fffefa" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <figcaption>Platzhalter – menschliche Silhouette</figcaption>
+        </figure>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="stationen">
+        <div class="section-heading">
+          <h2 id="stationen">Mein beruflicher Werdegang</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Zeitraum</th>
+                <th scope="col">Station</th>
+                <th scope="col">Ort</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2024–heute</td><td>Studium GuV</td><td>Mainz</td></tr>
+              <tr><td>2022–2024</td><td>Ausbildung zum Vermessungstechniker</td><td>Elversberg</td></tr>
+              <tr><td>2020–2022</td><td>Studium Informatik</td><td>Saarbrücken</td></tr>
+              <tr><td>2012–2020</td><td>Abitur</td><td>Homburg</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="kartenwelten">
+        <div class="section-heading">
+          <h2 id="kartenwelten">Kartenwelten entdecken</h2>
+          <p class="section-note">Karten, Geodaten und Werkzeuge</p>
+        </div>
+        <div class="gallery">
+          <article class="card">
+            <svg class="card-art" viewBox="0 0 600 380" role="img" aria-labelledby="google-map-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="google-map-title">Stilisierter Stadtplan mit Standortmarkierung</title>
+              <rect width="600" height="380" fill="#e6eee2"/>
+              <path d="M0 0h600v380H0z" fill="#e7eee3"/>
+              <path d="M0 250 113 188l93 30 68-93 90 34 102-97 134 60v258H0Z" fill="#d3e4d0"/>
+              <path d="M0 86 95 130l70-39 99 72 60-42 95 52 87-68 94 42M50 380l71-98 95 29 72-80 86 42 62-79 94 43" fill="none" stroke="#fffefa" stroke-width="17"/>
+              <path d="M0 86 95 130l70-39 99 72 60-42 95 52 87-68 94 42M50 380l71-98 95 29 72-80 86 42 62-79 94 43" fill="none" stroke="#b5c5b4" stroke-width="3"/>
+              <path d="m290 167 24 46 24-46a24 24 0 1 0-48 0Zm24-8a8 8 0 1 1 0 16 8 8 0 0 1 0-16" fill="#b8613b"/>
+            </svg>
+            <div class="card-copy">
+              <h3>Google Maps</h3>
+              <p>Digitale Karten helfen mir bei der Navigation und dabei, neue Orte und ihre Umgebung zu erkunden.</p>
+              <a class="card-link" href="https://maps.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google Maps besuchen (öffnet in neuem Tab)">Google Maps besuchen ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <svg class="card-art" viewBox="0 0 600 380" role="img" aria-labelledby="worldview-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="worldview-title">Erde aus dem All mit Satellitenmesspunkten</title>
+              <rect width="600" height="380" fill="#243c47"/>
+              <circle cx="470" cy="78" r="3" fill="#fffefa"/><circle cx="525" cy="142" r="4" fill="#fffefa"/><circle cx="375" cy="54" r="2.5" fill="#fffefa"/>
+              <circle cx="280" cy="330" r="176" fill="#477f83"/>
+              <path d="m153 228 24-50 51-12 26 29-15 37-35 11-17 43-38-14Zm127-47 45-30 66 10 26 33-39 28-8 52-33 23-32-41-41-9-18-35Zm174 139 39-14 29 30-17 49-50-8Z" fill="#98bd8b"/>
+              <path d="M160 115c79 19 154 44 232 91M126 174c91 8 186 36 269 83M114 236c96-8 202 22 291 78" fill="none" stroke="#d4e2cc" stroke-width="2" stroke-dasharray="5 8" opacity=".85"/>
+              <circle cx="281" cy="215" r="8" fill="#f3bd6b"/><circle cx="339" cy="250" r="6" fill="#f3bd6b"/>
+            </svg>
+            <div class="card-copy">
+              <h3>Erde aus dem All</h3>
+              <p>Freie Satelliten- und Erdbeobachtungsdaten machen Veränderungen unseres Planeten sichtbar und eröffnen neue Perspektiven auf die Erde.</p>
+              <a class="card-link" href="https://worldview.earthdata.nasa.gov/" target="_blank" rel="noopener noreferrer" aria-label="NASA Worldview ansehen (öffnet in neuem Tab)">NASA Worldview ansehen ↗</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <svg class="card-art" viewBox="0 0 600 380" role="img" aria-labelledby="leaflet-title" xmlns="http://www.w3.org/2000/svg">
+              <title id="leaflet-title">Stilisierte interaktive Karte mit Kartenmarkierungen</title>
+              <rect width="600" height="380" fill="#efe8d8"/>
+              <rect x="55" y="42" width="490" height="296" rx="8" fill="#e6eee2"/>
+              <path d="m55 260 87-56 70 22 65-96 67 39 81-86 120 51v204H55Z" fill="#c8ddc3"/>
+              <path d="m56 129 96 43 61-37 83 62 52-36 72 42 125-74M81 338l79-80 79 23 61-78 89 49 77-84 79 37" fill="none" stroke="#fffefa" stroke-width="13"/>
+              <path d="m56 129 96 43 61-37 83 62 52-36 72 42 125-74M81 338l79-80 79 23 61-78 89 49 77-84 79 37" fill="none" stroke="#8ca493" stroke-width="2"/>
+              <circle cx="308" cy="177" r="17" fill="#b8613b"/><circle cx="308" cy="177" r="7" fill="#fffefa"/>
+              <circle cx="420" cy="247" r="11" fill="#245b48"/><circle cx="420" cy="247" r="4" fill="#fffefa"/>
+            </svg>
+            <div class="card-copy">
+              <h3>Leaflet &amp; OpenStreetMap</h3>
+              <p>Mit Leaflet lassen sich interaktive Karten aus frei verfügbaren OpenStreetMap-Daten gestalten und in eigene Projekte einbinden.</p>
+              <div class="card-links">
+                <a class="card-link" href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer" aria-label="Leaflet-Dokumentation öffnen (öffnet in neuem Tab)">Leaflet-Dokumentation ↗</a>
+                <a class="card-link" href="https://www.openstreetmap.org/" target="_blank" rel="noopener noreferrer" aria-label="OpenStreetMap-Karte öffnen (öffnet in neuem Tab)">OpenStreetMap-Karte ↗</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Elias J. · Mit Neugier gestaltet.</p>
+    </footer>
+  </div>
+</body>
+</html>
