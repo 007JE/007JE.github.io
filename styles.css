@@ -60,9 +60,15 @@ header {
   top: 0;
   z-index: 10;
   padding-top: 1.75rem;
-  padding-bottom: 1.65rem;
   background: var(--paper);
-  border-bottom: 1px solid var(--line);
+}
+
+header::after {
+  display: block;
+  height: 1.65rem;
+  margin-top: 1.65rem;
+  border-top: 1px solid var(--line);
+  content: "";
 }
 
 .tab-list {
