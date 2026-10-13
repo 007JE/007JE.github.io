@@ -3,248 +3,85 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f4ef">
+  <meta name="theme-color" content="#f4f6f3">
   <meta name="description" content="Persönliche Startseite und beruflicher Werdegang von Elias J.">
   <title>Elias J. — persönliche Startseite</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f5f4ef;
-      --surface: #fffefa;
-      --ink: #202923;
-      --muted: #536258;
-      --line: #d9ded7;
-      --accent: #245b48;
-      --accent-soft: #e3ece5;
-      --radius: 1.15rem;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-synthesis: none;
-      text-rendering: optimizeLegibility;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.65;
-    }
-
-    a { color: var(--accent); }
-    a:focus-visible { outline: 3px solid #b35c28; outline-offset: 4px; }
-
-    .page {
-      width: min(100% - 2rem, 68rem);
-      margin-inline: auto;
-    }
-
-    header {
-      padding-block: clamp(3.5rem, 10vw, 7rem) 3rem;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(12rem, 17rem);
-      align-items: center;
-      gap: clamp(2rem, 6vw, 5rem);
-    }
-
-    .eyebrow {
-      margin: 0 0 .75rem;
-      color: var(--accent);
-      font-size: .8rem;
-      font-weight: 750;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-    h1 {
-      max-width: 14ch;
-      margin-bottom: 1rem;
-      font-size: clamp(2.7rem, 8vw, 5.4rem);
-      letter-spacing: -.065em;
-      line-height: 1.02;
-    }
-
-    .about-intro {
-      max-width: 43rem;
-      color: var(--muted);
-      font-size: clamp(1.05rem, 2vw, 1.2rem);
-    }
-
-    .about-intro h2 {
-      margin-bottom: .75rem;
-      color: var(--ink);
-    }
-
-    .about-intro p { margin-bottom: .75rem; }
-
-    main { padding-block: 3rem 5rem; }
-    section + section { margin-top: 4.5rem; }
-
-    .section-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    h2 {
-      margin-bottom: 0;
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      letter-spacing: -.035em;
-    }
-
-    .section-note {
-      margin: 0;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-    }
-
-    table {
-      width: 100%;
-      min-width: 38rem;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th, td { padding: .9rem 1rem; }
-    th {
-      background: var(--accent-soft);
-      color: #203d30;
-      font-size: .8rem;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-    }
-
-    td { border-top: 1px solid var(--line); }
-    tbody tr:first-child td { border-top: 0; }
-    td:first-child { font-variant-numeric: tabular-nums; font-weight: 700; }
-    td:last-child { color: var(--muted); }
-
-    figure { margin: 0; }
-    .portrait {
-      overflow: hidden;
-      aspect-ratio: 1;
-      border-radius: var(--radius);
-      background: var(--accent-soft);
-    }
-
-    .portrait svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    figcaption {
-      margin-top: .65rem;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .card {
-      display: block;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--surface);
-      color: inherit;
-      transition: transform 160ms ease, box-shadow 160ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgb(32 41 35 / 9%);
-    }
-
-    .card-art {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1.55;
-    }
-
-    .card-copy { padding: 1rem 1.1rem 1.2rem; }
-    h3 { margin-bottom: .35rem; font-size: 1.05rem; }
-    .card-copy p { margin-bottom: 0; color: var(--muted); font-size: .92rem; }
-    .card-link { display: inline-block; margin-top: .75rem; font-size: .85rem; font-weight: 700; }
-    .card-links { display: flex; flex-wrap: wrap; gap: .25rem 1rem; }
-    .card:focus-within { outline: 3px solid #b35c28; outline-offset: 3px; }
-
-    footer {
-      padding-block: 1.5rem 2.5rem;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    @media (max-width: 700px) {
-      .hero { grid-template-columns: minmax(0, 1fr) minmax(8rem, 12rem); gap: 1.25rem; }
-      .gallery { grid-template-columns: 1fr; }
-      .card { display: grid; grid-template-columns: minmax(7rem, .8fr) 1.2fr; }
-      .card-art { height: 100%; min-height: 10rem; aspect-ratio: auto; }
-      .card-copy { align-self: center; padding: 1rem; }
-    }
-
-    @media (max-width: 460px) {
-      .hero { grid-template-columns: 1fr; }
-      .portrait { width: min(100%, 13rem); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="page">
     <header>
-      <div class="hero">
-        <div>
-          <p class="eyebrow">Persönliche Seite · Geoinformatik</p>
-          <h1>Elias J.</h1>
-          <section class="about-intro" aria-labelledby="ueber-mich">
-            <h2 id="ueber-mich">Über mich</h2>
-            <p>Fußball ist meine große Leidenschaft: Ich schaue Spiele besonders gern live im Stadion, wo die Atmosphäre und das gemeinsame Mitfiebern für mich dazugehören. Auch für Sport allgemein interessiere ich mich.</p>
-            <p>Außerdem beschäftigen mich Vermessung und Geodäsie. Ich finde spannend, wie aus Messungen Karten und Geodaten entstehen und wie räumliche Informationen helfen, unsere Umgebung besser zu verstehen.</p>
-          </section>
-        </div>
-        <figure>
-          <div class="portrait">
-            <svg viewBox="0 0 400 400" role="img" aria-labelledby="portrait-title" xmlns="http://www.w3.org/2000/svg">
-              <title id="portrait-title">Grafischer Platzhalter mit menschlicher Silhouette</title>
-              <rect width="400" height="400" rx="28" fill="#e3ece5"/>
-              <circle cx="200" cy="151" r="72" fill="#789b88"/>
-              <path d="M63 400c8-93 62-145 137-145s129 52 137 145" fill="#789b88"/>
-              <path d="M151 255c12 26 29 40 49 40s37-14 49-40" fill="#678574"/>
-              <circle cx="317" cy="82" r="24" fill="#c3d7c8"/>
-              <path d="M315 70v24m-12-12h24" stroke="#fffefa" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <figcaption>Platzhalter – menschliche Silhouette</figcaption>
-        </figure>
+      <div class="topbar">
+        <p class="site-mark">Elias J. · Vermessung</p>
+        <button class="theme-toggle" type="button" aria-pressed="false" aria-label="Dunkelmodus umschalten">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Dark Mode</span>
+        </button>
       </div>
+      <nav class="tab-list" role="tablist" aria-label="Hauptnavigation" aria-orientation="horizontal">
+        <button class="tab" id="tab-about" type="button" role="tab" aria-selected="true" aria-controls="panel-about" tabindex="0">About</button>
+        <button class="tab" id="tab-news" type="button" role="tab" aria-selected="false" aria-controls="panel-news" tabindex="-1">News</button>
+        <button class="tab" id="tab-projects" type="button" role="tab" aria-selected="false" aria-controls="panel-projects" tabindex="-1">Projects</button>
+      </nav>
     </header>
 
     <main>
-      <section aria-labelledby="stationen">
+      <section class="tab-panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Persönliche Seite · Vermessung</p>
+            <h1>Elias J.</h1>
+            <section class="about-intro" aria-labelledby="ueber-mich">
+              <h2 id="ueber-mich">Über mich</h2>
+              <p>Fußball begeistert mich als Sport und wegen der besonderen Atmosphäre im Stadion. Spiele verfolge ich besonders gern live.</p>
+              <aside class="about-connection" aria-labelledby="fussball-geoinformatik">
+                <div class="about-connection-heading">
+                  <p class="eyebrow">Technik im Profifußball</p>
+                  <h2 id="fussball-geoinformatik">Fußball trifft Geoinformatik</h2>
+                </div>
+                <div class="about-connection-copy">
+                  <p>Bei der halbautomatischen Abseitserkennung liefern Kameras Bilddaten vom Spielfeld. Bilderkennung hilft dabei, Spieler und Ball in diesen Aufnahmen zu identifizieren und ihre Positionen zu verfolgen.</p>
+                  <p>Diese erkannten Positionen werden anschließend geometrisch zueinander ausgewertet, um die Lage von Angreifer, Ball und Abwehrlinie zu beurteilen. Das ist bildgestützte Positionsbestimmung und nicht dasselbe wie klassische Landvermessung.</p>
+                </div>
+              </aside>
+              <p class="about-closing">Mich fasziniert, wie sich meine Begeisterung für Fußball mit meinem fachlichen Interesse verbinden lässt. Besonders spannend finde ich Vermessung und Geodäsie: räumliche Positionen erfassen, präzise auswerten und verständlich darstellen. Auch Geoinformatik, Kartografie und WebGIS sprechen mich an, weil sie Geodaten in Karten und digitale Anwendungen übersetzen.</p>
+            </section>
+          </div>
+          <figure>
+            <div class="portrait">
+              <svg viewBox="0 0 400 400" role="img" aria-labelledby="portrait-title" xmlns="http://www.w3.org/2000/svg">
+                <title id="portrait-title">Illustrativer Platzhalter für ein persönliches Foto</title>
+                <rect width="400" height="400" rx="28" fill="#e3ece5"/>
+                <circle cx="200" cy="151" r="72" fill="#789b88"/>
+                <path d="M63 400c8-93 62-145 137-145s129 52 137 145" fill="#789b88"/>
+                <path d="M151 255c12 26 29 40 49 40s37-14 49-40" fill="#678574"/>
+                <circle cx="317" cy="82" r="24" fill="#c3d7c8"/>
+                <path d="M315 70v24m-12-12h24" stroke="#fffefa" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <figcaption>Foto-Platzhalter – hier dein persönliches Porträt einsetzen.</figcaption>
+          </figure>
+        </div>
+
+        <section class="about-topics" aria-label="Interessen und fachliche Schwerpunkte">
+          <div>
+            <h2>Interessen</h2>
+            <ul class="topic-list">
+              <li>Fußball und Stadionbesuche</li>
+              <li>Sport</li>
+            </ul>
+          </div>
+          <div>
+            <h2>Fachliche Schwerpunkte</h2>
+            <ul class="topic-list">
+              <li>Geoinformatik und Geodäsie</li>
+              <li>Vermessung und Geodaten</li>
+              <li>Kartografie und WebGIS</li>
+            </ul>
+          </div>
+        </section>
+
+        <section aria-labelledby="stationen">
         <div class="section-heading">
           <h2 id="stationen">Mein beruflicher Werdegang</h2>
         </div>
@@ -266,10 +103,24 @@
           </table>
         </div>
       </section>
+      </section>
 
+      <section class="tab-panel news-panel" id="panel-news" role="tabpanel" aria-labelledby="tab-news" tabindex="0" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Aktuelles</p>
+            <h1 class="section-title">News</h1>
+          </div>
+          <p class="section-note">Meldungen aus der News-Datendatei</p>
+        </div>
+          <p class="news-status" id="news-status" role="status" aria-live="polite">Öffne den News-Tab, um Meldungen zu laden.</p>
+          <div class="news-list" id="news-list" aria-busy="false"></div>
+      </section>
+
+      <section class="tab-panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="0" hidden>
       <section aria-labelledby="kartenwelten">
         <div class="section-heading">
-          <h2 id="kartenwelten">Kartenwelten entdecken</h2>
+          <h1 class="section-title" id="kartenwelten">Kartenwelten entdecken</h1>
           <p class="section-note">Karten, Geodaten und Werkzeuge</p>
         </div>
         <div class="gallery">
@@ -327,13 +178,254 @@
               </div>
             </div>
           </article>
+
+          <!-- Vorlage: Vorschau, Titel, Beschreibung und Ziel-URL durch eigene Inhalte ersetzen. -->
+          <article class="card">
+            <div class="card-art project-preview" role="img" aria-label="Vorschau-Platzhalter für ein eigenes Web-Map-Projekt">
+              <span>Eigene Web-Map</span>
+              <span class="preview-pin" aria-hidden="true">+</span>
+            </div>
+            <div class="card-copy">
+              <h3>Eigenes Projekt ergänzen</h3>
+              <p>Ersetze diesen Platzhalter durch den Titel und eine kurze Beschreibung deiner Web-Map oder Webseite.</p>
+              <a class="card-link" href="https://example.com/dein-projekt" target="_blank" rel="noopener noreferrer">Projekt-Link ergänzen ↗</a>
+            </div>
+          </article>
         </div>
+      </section>
       </section>
     </main>
 
     <footer>
-      <p>© 2026 Elias J. · Mit Neugier gestaltet.</p>
+      <div class="footer-inner">
+        <p>© 2026 Elias J. · Mit Neugier gestaltet.</p>
+        <nav class="contact-links" aria-label="Kontakt und Profile">
+          <a class="contact-link" href="https://github.com/DEIN-BENUTZERNAME" target="_blank" rel="noopener noreferrer" aria-label="GitHub-Profil öffnen (Platzhalter-Link)" title="GitHub-Profil">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 1C5.93 1 1 5.93 1 12c0 4.86 3.16 8.99 7.55 10.44.55.1.75-.24.75-.53v-1.87c-3.07.67-3.72-1.3-3.72-1.3-.5-1.28-1.22-1.62-1.22-1.62-.99-.68.08-.67.08-.67 1.1.08 1.68 1.14 1.68 1.14.98 1.68 2.57 1.2 3.2.92.1-.71.38-1.2.7-1.48-2.45-.28-5.03-1.22-5.03-5.44 0-1.2.43-2.18 1.13-2.95-.11-.28-.49-1.4.11-2.92 0 0 .92-.3 3.03 1.13.88-.25 1.82-.37 2.75-.37s1.87.12 2.75.37c2.1-1.42 3.02-1.13 3.02-1.13.6 1.53.23 2.64.12 2.92.7.77 1.12 1.74 1.12 2.95 0 4.23-2.58 5.16-5.04 5.43.4.35.75 1.03.75 2.08v3.08c0 .29.2.63.76.52A11.02 11.02 0 0 0 23 12C23 5.93 18.07 1 12 1z"/>
+            </svg>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/DEIN-LINKEDIN-PROFIL/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn-Profil öffnen (Platzhalter-Link)" title="LinkedIn-Profil">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.45H3.56V9h3.56zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm15.11 13.02h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.29 2.38 4.29 5.47z"/>
+            </svg>
+          </a>
+          <a class="contact-link" href="mailto:deine.email@example.com" aria-label="E-Mail an deine.email@example.com schreiben" title="E-Mail">
+            <svg class="contact-mail-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <path d="m4 7 8 6 8-6"/>
+            </svg>
+          </a>
+        </nav>
+      </div>
     </footer>
   </div>
+  <script>
+    const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+
+    function activateTab(selectedTab, moveFocus = false) {
+      tabs.forEach((tab) => {
+        const isSelected = tab === selectedTab;
+        tab.setAttribute('aria-selected', String(isSelected));
+        tab.tabIndex = isSelected ? 0 : -1;
+        document.getElementById(tab.getAttribute('aria-controls')).hidden = !isSelected;
+      });
+
+      if (moveFocus) selectedTab.focus();
+      if (selectedTab.id === 'tab-news') loadNews();
+    }
+
+    // Arrow keys cycle through tabs; Home and End jump to the first or last tab.
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        let nextIndex;
+
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+
+        if (nextIndex !== undefined) {
+          event.preventDefault();
+          activateTab(tabs[nextIndex], true);
+        }
+      });
+    });
+
+    const newsList = document.querySelector('#news-list');
+    const newsStatus = document.querySelector('#news-status');
+    let newsLoading = false;
+    let newsLoaded = false;
+
+    function newsValidationError(message) {
+      const error = new Error(message);
+      error.name = 'NewsValidationError';
+      return error;
+    }
+
+    function validateNewsItem(item, index) {
+      const requiredFields = ['title', 'date', 'text', 'image', 'alt'];
+
+      if (!item || typeof item !== 'object' || Array.isArray(item)) {
+        throw newsValidationError(`Meldung ${index + 1} ist kein Objekt.`);
+      }
+
+      for (const field of requiredFields) {
+        if (typeof item[field] !== 'string' || item[field].trim() === '') {
+          throw newsValidationError(`Meldung ${index + 1}: Das Feld "${field}" fehlt oder ist leer.`);
+        }
+      }
+
+      const parsedDate = new Date(`${item.date}T00:00:00Z`);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(item.date) || Number.isNaN(parsedDate.getTime()) || parsedDate.toISOString().slice(0, 10) !== item.date) {
+        throw newsValidationError(`Meldung ${index + 1}: "date" muss ein gültiges Datum im Format JJJJ-MM-TT sein.`);
+      }
+
+      if (/^(?:[a-z][a-z\d+.-]*:|\/|\\)/i.test(item.image) || item.image.split(/[\\/]/).includes('..')) {
+        throw newsValidationError(`Meldung ${index + 1}: "image" muss ein relativer Dateipfad sein.`);
+      }
+
+      let sourceUrl = null;
+      if (item.url !== undefined && item.url !== null && item.url !== '') {
+        if (typeof item.url !== 'string') {
+          throw newsValidationError(`Meldung ${index + 1}: "url" muss eine Webadresse sein.`);
+        }
+
+        try {
+          sourceUrl = new URL(item.url, document.baseURI);
+        } catch {
+          throw newsValidationError(`Meldung ${index + 1}: "url" ist ungültig.`);
+        }
+
+        if (!['http:', 'https:'].includes(sourceUrl.protocol)) {
+          throw newsValidationError(`Meldung ${index + 1}: "url" muss mit HTTP oder HTTPS beginnen.`);
+        }
+      }
+
+      return {
+        title: item.title.trim(),
+        date: item.date,
+        text: item.text.trim(),
+        image: item.image.trim(),
+        alt: item.alt.trim(),
+        url: sourceUrl ? sourceUrl.href : null
+      };
+    }
+
+    function createNewsCard(item) {
+      const card = document.createElement('article');
+      card.className = 'news-card news-item';
+
+      const image = document.createElement('img');
+      image.className = 'news-image';
+      image.src = item.image;
+      image.alt = item.alt;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+
+      const content = document.createElement('div');
+      content.className = 'news-copy';
+
+      const heading = document.createElement('h2');
+      heading.textContent = item.title;
+
+      const date = document.createElement('time');
+      date.className = 'news-date';
+      date.dateTime = item.date;
+      date.textContent = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(new Date(`${item.date}T00:00:00`));
+
+      const description = document.createElement('p');
+      description.textContent = item.text;
+      content.append(heading, date, description);
+
+      if (item.url) {
+        const source = document.createElement('a');
+        source.className = 'news-source';
+        source.href = item.url;
+        source.target = '_blank';
+        source.rel = 'noopener noreferrer';
+        source.textContent = 'Quelle öffnen ↗';
+        content.append(source);
+      }
+
+      card.append(image, content);
+      return card;
+    }
+
+    async function loadNews() {
+      if (newsLoading || newsLoaded) return;
+
+      newsLoading = true;
+      newsStatus.dataset.state = 'loading';
+      newsStatus.textContent = 'Neuigkeiten werden geladen …';
+      newsList.setAttribute('aria-busy', 'true');
+      newsList.replaceChildren();
+
+      try {
+        const response = await fetch('assets/news.json', { headers: { Accept: 'application/json' } });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const entries = await response.json();
+        if (!Array.isArray(entries) || entries.length === 0) {
+          throw newsValidationError('Die Datei muss ein nicht leeres JSON-Array enthalten.');
+        }
+
+        const cards = entries.map(validateNewsItem).map(createNewsCard);
+        newsList.replaceChildren(...cards);
+        newsStatus.dataset.state = 'success';
+        newsStatus.textContent = `${cards.length} Meldungen geladen.`;
+        newsLoaded = true;
+      } catch (error) {
+        newsList.replaceChildren();
+        newsStatus.dataset.state = 'error';
+
+        if (error.name === 'NewsValidationError') {
+          newsStatus.textContent = `Ungültige News-Daten: ${error.message}`;
+        } else if (error instanceof SyntaxError) {
+          newsStatus.textContent = 'assets/news.json enthält kein gültiges JSON.';
+        } else {
+          newsStatus.textContent = 'News konnten nicht geladen werden. Öffne die Seite über einen lokalen Webserver und prüfe assets/news.json.';
+        }
+
+        console.error('News-Daten konnten nicht geladen werden:', error);
+      } finally {
+        newsLoading = false;
+        newsList.setAttribute('aria-busy', 'false');
+      }
+    }
+
+    const themeButton = document.querySelector('.theme-toggle');
+    const themeLabel = themeButton.querySelector('.theme-label');
+    const themeIcon = themeButton.querySelector('.theme-icon');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem('theme');
+    } catch {
+      // The theme switch still works when browser storage is unavailable.
+    }
+
+    function setTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      const isDark = theme === 'dark';
+      themeButton.setAttribute('aria-pressed', String(isDark));
+      themeLabel.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+      themeIcon.textContent = isDark ? '☀' : '☾';
+    }
+
+    setTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+    themeButton.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+      try {
+        localStorage.setItem('theme', nextTheme);
+      } catch {
+        // Keep the selected theme for this page view.
+      }
+    });
+  </script>
 </body>
 </html>

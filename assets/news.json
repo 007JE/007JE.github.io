@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Beispiel: Fußball und Bilderkennung",
+    "date": "2026-10-08",
+    "text": "Platzhalter: Ergänze hier eine Neuigkeit zu Kameras, Bildverarbeitung oder einer technischen Entwicklung im Fußball.",
+    "image": "assets/images/news-pitch.svg",
+    "alt": "Illustration eines Fußballfelds mit Kameras und markierten Spielerpositionen",
+    "url": "https://www.fifa.com/technical/football-technology"
+  },
+  {
+    "title": "KI macht Satellitendaten besser nutzbar",
+    "date": "2026-06-04",
+    "text": "Das KI-Modell Tessera nutzt Erdbeobachtungsdaten der europäischen Sentinel-1- und Sentinel-2-Satelliten. Die daraus gewonnenen Daten können helfen, Veränderungen der Landoberfläche zu kartieren, landwirtschaftliche Flächen zu beobachten und Waldbrandschäden zu erfassen. Ein spannendes Beispiel dafür, wie Fernerkundung, künstliche Intelligenz und Geoinformatik zusammenarbeiten.",
+    "image": "assets/images/news-satellite-ai.svg",
+    "alt": "Satellit erfasst Felder und Waldflächen für eine Analyse von Erdbeobachtungsdaten",
+    "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Tessera_AI_model_offers_accessible_way_to_view_Earth"
+    },
+  {
+    "title": "Fußball-WM 2026: Fortschritte bei der Abseitserkennung",
+    "date": "2026-06-03",
+    "text": "Bei der Fußball-Weltmeisterschaft 2026 kommt eine weiterentwickelte halbautomatische Abseitstechnologie zum Einsatz. Trackingkameras, Balltracking und dreidimensionale Spielermodelle helfen dabei, Spielerpositionen genauer auszuwerten und klare Abseitsstellungen schneller zu erkennen. Die Technologie verbindet Bilderfassung, räumliche Daten und geometrische Auswertung und zeigt, wie eng moderner Fußball mit technischen Verfahren verknüpft ist.",
+    "image": "assets/images/news-offside-tracking.svg",
+    "alt": "Halbautomatische Abseitserkennung mit Spielermarkierungen, Ball und geometrischer Abseitslinie",
+    "url": "https://inside.fifa.com/de/innovation/news/wie-innovationen-fussball-weltmeisterschaft-2026-auf-ein-neues-niveau-heben"
+    }
+]

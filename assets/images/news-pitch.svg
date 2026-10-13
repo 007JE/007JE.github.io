@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title">
+  <title id="title">Fußballfeld mit Kameras und Positionspunkten</title>
+  <rect width="720" height="400" fill="#dcebdc"/>
+  <rect x="48" y="38" width="624" height="324" rx="18" fill="#39785d"/>
+  <path d="M360 38v324M48 200h624M48 108h100v184H48M672 108H572v184h100" fill="none" stroke="#eff7ed" stroke-width="5" opacity=".9"/>
+  <circle cx="360" cy="200" r="55" fill="none" stroke="#eff7ed" stroke-width="5"/>
+  <circle cx="360" cy="200" r="7" fill="#eff7ed"/>
+  <path d="M82 62h48l16 24v24H66V86zM590 62h48l16 24v24h-80V86z" fill="#203b35"/>
+  <circle cx="210" cy="155" r="13" fill="#f4b45f"/>
+  <circle cx="430" cy="244" r="13" fill="#f4b45f"/>
+  <circle cx="518" cy="151" r="13" fill="#df7653"/>
+  <path d="M210 155 360 200l158-49" fill="none" stroke="#f4d38d" stroke-width="3" stroke-dasharray="8 9"/>
+</svg>

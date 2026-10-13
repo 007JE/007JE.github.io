@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title">
+  <title id="title">Satellit erfasst Landoberflächen für eine Fernerkundungsanalyse</title>
+  <defs>
+    <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d7e7d0"/>
+      <stop offset="1" stop-color="#a9c7b2"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efc66f" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#efc66f" stop-opacity=".5"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="400" fill="#eaf0e9"/>
+  <path d="M0 240 108 190l86 17 98-93 96 52 105-90 112 47 115-43v320H0z" fill="url(#land)"/>
+  <path d="m0 300 121-67 94 37 98-84 116 42 102-76 88 38 101-46v256H0z" fill="#8fb7a0"/>
+  <path d="M35 338 170 264l75 29 88-76 101 37 91-74 82 33 81-37" fill="none" stroke="#f7f4e8" stroke-width="8" opacity=".85"/>
+  <path d="M394 62 567 285" stroke="#d69a4d" stroke-width="2" stroke-dasharray="8 8"/>
+  <path d="M390 85 550 296" stroke="url(#scan)" stroke-width="88"/>
+  <g transform="translate(286 43) rotate(-18)">
+    <rect x="35" y="15" width="76" height="48" rx="10" fill="#314b46"/>
+    <rect x="0" y="23" width="30" height="32" rx="4" fill="#7295a4"/>
+    <rect x="116" y="23" width="30" height="32" rx="4" fill="#7295a4"/>
+    <path d="M71 63v21m-20 0h40" stroke="#314b46" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="73" cy="39" r="12" fill="#efc66f"/>
+    <circle cx="73" cy="39" r="5" fill="#314b46"/>
+  </g>
+  <circle cx="500" cy="252" r="9" fill="#c65e43" stroke="#fffaf0" stroke-width="4"/>
+</svg>

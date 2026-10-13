@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title">
+  <title id="title">Kartenausschnitt mit Straßen und Standort</title>
+  <rect width="720" height="400" fill="#e4ede3"/>
+  <path d="M0 278 126 201l115 23 97-121 93 45 92-75 197 72v255H0z" fill="#c7dec7"/>
+  <path d="M-10 99 138 158l103-67 109 94 91-62 111 48 89-75 96 37M35 410l107-126 108 36 86-85 93 51 77-93 130 55" fill="none" stroke="#fffdf7" stroke-width="22"/>
+  <path d="M-10 99 138 158l103-67 109 94 91-62 111 48 89-75 96 37M35 410l107-126 108 36 86-85 93 51 77-93 130 55" fill="none" stroke="#8ba493" stroke-width="3"/>
+  <circle cx="382" cy="172" r="25" fill="#c15f3d"/>
+  <circle cx="382" cy="172" r="9" fill="#fffdf7"/>
+  <circle cx="511" cy="252" r="14" fill="#23694e"/>
+  <circle cx="511" cy="252" r="5" fill="#fffdf7"/>
+</svg>

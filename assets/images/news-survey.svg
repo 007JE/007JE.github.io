@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-labelledby="title">
+  <title id="title">Vermessungsinstrument vor einem digitalen Geländemodell</title>
+  <rect width="720" height="400" fill="#e9eee8"/>
+  <path d="M0 280 116 213l99 23 120-111 95 57 97-83 193 75v226H0z" fill="#bad2c2"/>
+  <path d="M0 318 151 254l109 35 117-77 117 37 112-81 114 34v198H0z" fill="#8fb5a0"/>
+  <path d="M56 120c110-63 231-64 334-11M104 155c112-56 219-56 322-6M171 189c92-42 188-42 277-1" fill="none" stroke="#477966" stroke-width="3" stroke-dasharray="7 8"/>
+  <path d="m332 295 28-91 28 91m-47-56h38m-58 67h77" fill="none" stroke="#263e38" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="333" y="166" width="54" height="35" rx="7" fill="#bd6747"/>
+  <circle cx="360" cy="183" r="9" fill="#fff4df"/>
+  <path d="M355 201v18m10-18v18" stroke="#263e38" stroke-width="6"/>
+  <circle cx="570" cy="102" r="28" fill="#f2c779" opacity=".85"/>
+</svg>
